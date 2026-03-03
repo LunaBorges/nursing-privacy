@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursing Privacy - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2 style="color: #0056b3;">Nursing Privacy</h2>
+        <p class="tag-seguranca">Acesso Monitorado (LGPD)</p>
+        
+        <form action="/dashboard" method="GET">
+            <label style="display:block; text-align:left; font-size:12px; color:#666; margin-bottom:5px;">
+                Identificação Profissional
+            </label>
+            
+            <input type="text" name="cpf" placeholder="Digite seu CPF" required maxlength="11">
+            <input type="text" name="coren" placeholder="Número do COREN" required>
+            
+            <button type="submit" class="btn-entrar" style="width: 100%; border: none; cursor: pointer;">
+                ENTRAR
+            </button>
+        </form>
+
+        <p class="footer-login">Hospital Modelo - UTI</p>
+    </div>
+
+</body>
+</html>

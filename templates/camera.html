@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursing Privacy - Captura</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="camera-body">
+
+    <div id="flash"></div>
+
+    <div class="camera-container">
+        <video id="webcam" autoplay playsinline></video>
+        
+        <canvas id="canvas" style="display:none;"></canvas>
+
+        <div id="overlay" class="camera-overlay">
+            <div class="escudo-verde">
+                <span class="badge-etica">BOT DE PRIVACIDADE ATIVO</span>
+            </div>
+        </div>
+
+        <div id="resultado-container" style="display:none;">
+            <img id="foto-capturada" src="" class="foto-com-blur">
+            <div class="tarja-etica">IDENTIDADE PROTEGIDA</div>
+        </div>
+    </div>
+
+    <div class="camera-footer">
+        <button id="btn-snap" class="btn-capturar">📸 CAPTURAR AGORA</button>
+        <div id="acoes-pos-foto" style="display:none;">
+            <p style="color:#28a745; font-weight:bold;">✓ Anonimização Concluída</p>
+            <button onclick="window.location.href='/dashboard'" class="btn-enviar-prontuario">ENVIAR AO PRONTUÁRIO</button>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('webcam');
+        const canvas = document.getElementById('canvas');
+        const foto = document.getElementById('foto-capturada');
+        const flash = document.getElementById('flash');
+
+        // Liga a câmera
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+            .then(stream => { video.srcObject = stream; })
+            .catch(err => { alert("Permita a câmera para simular."); });
+
+        document.getElementById('btn-snap').onclick = function() {
+            // 1. Efeito de Flash
+            flash.style.display = "block";
+            setTimeout(() => { flash.style.display = "none"; }, 100);
+
+            // 2. Tira a foto do vídeo e joga no Canvas
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+            
+            // 3. Mostra a foto e esconde o vídeo
+            foto.src = canvas.toDataURL('image/png');
+            document.getElementById('resultado-container').style.display = "block";
+            document.getElementById('overlay').style.display = "none";
+            video.style.display = "none";
+            
+            // 4. Muda os botões
+            this.style.display = "none";
+            document.getElementById('acoes-pos-foto').style.display = "block";
+        };
+    </script>
+</body>
+</html>

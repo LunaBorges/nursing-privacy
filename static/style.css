@@ -1,0 +1,341 @@
+/* Configuração Geral */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #eef2f7;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Caixa de Alerta do TCC */
+.aviso-container {
+    background: white;
+    width: 90%;
+    max-width: 380px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 6px solid #d9534f;
+}
+
+.icon-alerta { font-size: 50px; margin-bottom: 15px; }
+
+h1 { color: #d9534f; font-size: 20px; }
+
+.texto-informativo {
+    text-align: left;
+    background: #fff5f5;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin: 20px 0;
+}
+
+/* Botão Azul Hospitalar */
+.btn-prosseguir {
+    display: block;
+    background: #0056b3;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-prosseguir:hover { background: #003d7a; }
+
+/* Estilos específicos para a tela de Login */
+.login-container {
+    background: white;
+    width: 90%;
+    max-width: 350px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.tag-seguranca {
+    background: #e1f5fe;
+    color: #0288d1;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid #b3e5fc;
+}
+
+.form-login label {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    box-sizing: border-box; /* Importante para o padding não quebrar o layout */
+    background: #f8f9fa;
+}
+
+.btn-entrar {
+    display: block;
+    background: #0056b3;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.footer-login {
+    font-size: 11px;
+    color: #999;
+    margin-top: 25px;
+}
+
+/* Estilos do Dashboard */
+.dashboard-body {
+    display: block; /* No dashboard não queremos tudo centralizado verticalmente */
+    background: #f0f4f8;
+}
+
+.header-app {
+    background: #0056b3;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.dashboard-container {
+    padding: 20px;
+    text-align: center;
+    max-width: 400px; /* Limita a largura para não esticar no PC */
+    margin: 0 auto;    /* Centraliza a caixa no meio da tela */
+}
+
+.grid-botoes {
+    display: grid;
+    grid-template-columns: 1fr; /* Um botão embaixo do outro para celular */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card-btn {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 5px solid #0056b3;
+}
+
+.camera-btn {
+    background: #e3f2fd; /* Cor diferente para destacar a função principal */
+    border-left: 5px solid #28a745; /* Verde para indicar ação */
+}
+
+.card-btn .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.footer-seguranca {
+    margin-top: 40px;
+    font-size: 11px;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* Estilo da Câmera */
+.camera-body {
+    background: black;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#webcam {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.camera-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 70%;
+    display: flex; justify-content: center; align-items: center;
+    pointer-events: none; /* Deixa clicar no botão através desta camada */
+}
+
+.escudo-verde {
+    width: 280px; height: 280px;
+    border: 3px solid #28a745;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1000px rgba(0,0,0,0.5); /* Escurece em volta */
+    display: flex; justify-content: center; align-items: flex-end;
+    padding-bottom: 20px;
+}
+
+.badge-etica {
+    background: #28a745; color: white;
+    font-size: 10px; font-weight: bold;
+    padding: 5px 10px; border-radius: 5px;
+}
+
+.camera-footer {
+    position: absolute; bottom: 0; width: 100%;
+    padding: 30px 0; background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    text-align: center;
+}
+
+.btn-capturar {
+    background: white; border: none; padding: 15px 30px;
+    border-radius: 50px; font-weight: bold; color: #0056b3;
+    font-size: 16px; margin-bottom: 15px; cursor: pointer;
+}
+
+.aviso-lgpd { color: #ccc; font-size: 11px; padding: 0 20px; }
+
+.btn-voltar { color: white; display: block; margin-top: 15px; font-size: 13px; }
+
+/* Efeito de Flash */
+#flash {
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    background: white; display: none; z-index: 100;
+}
+
+/* O Segredo da Anonimização Visual */
+.foto-com-blur {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: blur(15px); /* ISSO AQUI FAZ O DESFOQUE DA IA */
+    transition: 0.5s;
+}
+
+.tarja-etica {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.8);
+    color: #28a745;
+    padding: 10px 20px;
+    border: 2px solid #28a745;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.btn-enviar-prontuario {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Página de Alerta Inicial */
+.body-alerta {
+    background-color: #1a1a1a; /* Fundo escuro para dar destaque ao card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container-alerta {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+}
+
+.faixa-atencao {
+    background: #ffcc00; /* Amarelo Alerta */
+    color: #000;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 2px solid #000;
+}
+
+.conteudo-alerta {
+    padding: 30px;
+    text-align: center;
+}
+
+.conteudo-alerta h2 {
+    color: #d9534f;
+    margin-top: 0;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.caixa-destaque {
+    text-align: left;
+    background: #fdfae6;
+    border-left: 5px solid #ffcc00;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.caixa-destaque ul {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #333;
+    padding-left: 20px;
+}
+
+.aviso-plagio {
+    font-size: 12px;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.btn-declaracao {
+    display: block;
+    background: #000;
+    color: #ffcc00;
+    padding: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid #ffcc00;
+    transition: 0.3s;
+}
+
+.btn-declaracao:hover {
+    background: #ffcc00;
+    color: #000;
+}
